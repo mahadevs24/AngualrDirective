@@ -10,9 +10,25 @@
       </ul>
       <ng-template [ngIf]="onlyOdd">
         <p>Only odd</p>
+        <p appBasicHighlightDirective>Only odd</p>
+        <p better-highlighter [defaultColor]="'SlateBlue'">Only odd</p>
       </ng-template>
-      <p appBasicHighlightDirective>Only odd</p>
-      <p better-highlighter [defaultColor]="'SlateBlue'">Only odd</p>
+
+      <div *appUnless="!onlyOdd">
+        <p>Only odd</p>
+        <p appBasicHighlightDirective>Only odd</p>
+        <p better-highlighter [defaultColor]="'SlateBlue'">Only odd</p>
+        <p>this is unless</p>
+      </div>
+    </div>
+
+    <h1>Ng Swithch example</h1>
+    <div [ngSwitch]="value">
+      <p *ngSwitchCase="5">5</p>
+      <p *ngSwitchCase="3">3</p>
+      <p></p>
+      <p></p>
+      <p></p>
     </div>
   </div>
 </div>
